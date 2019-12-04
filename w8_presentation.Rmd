@@ -77,14 +77,20 @@ This workshop focuses on bullet points 2-4.
 - initially used for creating structured HTML files
 - can now be used to author any kind of document (.doc, .pdf, ...), website, notes, books,
 presentation, emails or documentation (This presentation is authored in Markdown!)
-- RStudio supports Markdown, but a lot of other Text Editing Tools and IDEs support it as well (Atom, VS Code, [dillinger.io](https://dillinger.io/), etc.)
+- RStudio supports Markdown, but a lot of other text editing tools and IDEs support it as well (Atom, VS Code, [dillinger.io](https://dillinger.io/), etc.)
 - Tutorials: 
   - [www.markdownguide.org](https://www.markdownguide.org/getting-started/)
   - [guides.github.com](https://guides.github.com/features/mastering-markdown/)
 - For the conversion of a Markdown File to any other document format the software [pandoc](https://pandoc.org/) is usually used.
 - Fortunately RStudio takes care of most of these things in the background!
+- Let's have a look at a simple markdown file!
 
 ## Let's get the workshop material from github.com
+
+- Open RStudio
+- File -> New Project -> Version Control -> Git
+- Repository URL: https://github.com/tilltnet/w8_reproducible_research.git
+- Choose local folder to create project folder in.
 
 ## A simple RMarkdown File
 

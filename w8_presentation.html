@@ -449,7 +449,7 @@ Till Krenz
 <li>a lightweight markup language</li>
 <li>initially used for creating structured HTML files</li>
 <li>can now be used to author any kind of document (.doc, .pdf, …), website, notes, books, presentation, emails or documentation (This presentation is authored in Markdown!)</li>
-<li>RStudio supports Markdown, but a lot of other Text Editing Tools and IDEs support it as well (Atom, VS Code, <a href="https://dillinger.io/">dillinger.io</a>, etc.)</li>
+<li>RStudio supports Markdown, but a lot of other text editing tools and IDEs support it as well (Atom, VS Code, <a href="https://dillinger.io/">dillinger.io</a>, etc.)</li>
 <li>Tutorials:
 <ul>
 <li><a href="https://www.markdownguide.org/getting-started/">www.markdownguide.org</a></li>
@@ -457,10 +457,17 @@ Till Krenz
 </ul></li>
 <li>For the conversion of a Markdown File to any other document format the software <a href="https://pandoc.org/">pandoc</a> is usually used.</li>
 <li>Fortunately RStudio takes care of most of these things in the background!</li>
+<li>Let’s have a look at a simple markdown file!</li>
 </ul>
 </div>
 <div id="lets-get-the-workshop-material-from-github.com" class="slide section level2">
 <h1>Let’s get the workshop material from github.com</h1>
+<ul>
+<li>Open RStudio</li>
+<li>File -&gt; New Project -&gt; Version Control -&gt; Git</li>
+<li>Repository URL: <a href="https://github.com/tilltnet/w8_reproducible_research.git" class="uri">https://github.com/tilltnet/w8_reproducible_research.git</a></li>
+<li>Choose local folder to create project folder in.</li>
+</ul>
 </div>
 <div id="a-simple-rmarkdown-file" class="slide section level2">
 <h1>A simple RMarkdown File</h1>
@@ -483,25 +490,62 @@ Till Krenz
 <li>You might want to start out with a R-Notebook and convert it to RMarkdown File later on</li>
 </ul>
 </div>
-<div id="advanced-options" class="slide section level2">
-<h1>Advanced options</h1>
+<div id="advanced-options-inline-r-code" class="slide section level2">
+<h1>Advanced options &amp; inline R-Code</h1>
 <ul>
-<li>activate Cairo renderer (in order to have nice plots on windows!)</li>
+<li>activate Cairo renderer (in order to have nice plots on Windows!)</li>
 <li>using the cache to speed up rendering</li>
-<li>setting global options for figure size and chunk evaluation</li>
+<li>setting global options for figure size and chunk evaluation
+<ul>
+<li>chunk options have priority over global options</li>
+</ul></li>
+</ul>
+</div>
+<div id="some-output-formats" class="slide section level2">
+<h1>(Some) Output formats</h1>
+<ul>
+<li>HTML</li>
+<li>PDF (needs a Latex install on the system; tinytex::install_tinytex())</li>
+<li>docx</li>
+<li>ioslides</li>
+<li>slidy</li>
+<li>Powerpoint</li>
 </ul>
 </div>
 <div id="creating-nice-tables" class="slide section level2">
 <h1>Creating nice tables</h1>
+<ul>
+<li>knitr::kable()</li>
+<li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a></li>
+</ul>
 </div>
 <div id="creating-regression-tables" class="slide section level2">
 <h1>Creating regression tables</h1>
+<ul>
+<li>HTML: sjPlot::tab_model()</li>
+<li>HTML and PDF: stargazer::stargazer()</li>
+</ul>
+</div>
+<div id="creating-awesome-tables" class="slide section level2">
+<h1>Creating awesome tables</h1>
+<ul>
+<li>colorfull and flexible: <a href="https://renkun-ken.github.io/formattable/">formattable</a></li>
+<li>interactive: <a href="https://glin.github.io/reactable/articles/examples.html">reacttable</a></li>
+</ul>
 </div>
 <div id="including-bibliographies" class="slide section level2">
 <h1>Including bibliographies</h1>
+<ul>
+<li>adding YAML option</li>
+<li>referencing in markdown text:</li>
+</ul>
 </div>
 <div id="including-interactive-elements" class="slide section level2">
 <h1>Including interactive elements</h1>
+<ul>
+<li><a href="https://datastorm-open.github.io/visNetwork/">visNetwork</a></li>
+<li><a href="https://www.htmlwidgets.org/">htmlwidgets</a></li>
+</ul>
 </div>
 <div id="when-the-article-is-getting-longer-bookdown" class="slide section level2">
 <h1>When the article is getting longer: bookdown</h1>
@@ -525,12 +569,14 @@ Till Krenz
 <h1>Exercise:</h1>
 <ul>
 <li>Create an RMarkdown File</li>
-<li>load a dataset</li>
+<li><p>load a dataset (other than mtcars)</p></li>
 <li>display the first few cases of the dataset in a nice table</li>
 <li>create a nice frequency table</li>
 <li>create any kind of plot based on the dataset</li>
 <li>create a two step regression model and display the results in a nice table</li>
-<li>render the whole document to two different formats (doc, pdf, html)</li>
+<li>add references to the document and create a bibliography</li>
+<li>add any further elements you are interested in</li>
+<li><p>render the whole document to two different formats (doc, pdf, html)</p></li>
 </ul>
 </div>
 
