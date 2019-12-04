@@ -1,0 +1,151 @@
+---
+title: "W8 Examples"
+author: "Till Krenz"
+date: "12/4/2019"
+always_allow_html: yes
+bibliography: MyCollection.bib
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	dev.args = list(type = "cairo")
+)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+```{r load data}
+data(mtcars)
+```
+
+
+We can include R code inline as well like this: The average amount of cylinders of the cars in the mtcars dataset is `r mean(mtcars$cyl)`.
+
+## Nice Tables
+
+Now let's create some better looking tables. The following looks good in RStudio, but after rendering not that much.
+
+```{r cars}
+head(mtcars)
+```
+
+knitr::kable() creates an actual table in the target format (In RStudio it doesn't lool that nice though!)
+
+```{r}
+library(knitr)
+
+kable(head(mtcars))
+```
+
+The kableExtra package allows us to manipulate the output tables in detail:
+
+```{r}
+library(kableExtra)
+
+kable(head(mtcars)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  row_spec(0, angle = -45)
+```
+
+```{r}
+mtcars %>% 
+  count(cyl) %>% 
+  mutate(percent = n / sum(n) * 100) %>% 
+  kable()
+```
+
+
+
+## Regression Tables
+
+```{r}
+mod1 <- lm(mpg ~ cyl + vs + gear, data = mtcars)
+mod2 <- lm(mpg ~ cyl + vs + gear + hp + disp, data = mtcars)
+```
+
+
+with sjPlot:
+
+```{r}
+library(sjPlot)
+tab_model(mod1, mod2)
+```
+
+with stargazer:
+
+```{r results='asis'}
+library(stargazer)
+stargazer(mod1, mod2)
+```
+
+## Awesome Tables
+
+formattable
+
+```{r}
+library(formattable)
+formattable(mtcars,
+            list(mpg = color_tile("yellow", "orange"),
+                 area(col = disp) ~ normalize_bar("pink", 0.2),
+                 area(col = hp) ~ normalize_bar("lightgreen", 0.2),
+                 vs = formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No")))))
+```
+
+reactable
+
+```{r}
+library(reactable)
+
+reactable(mtcars)
+```
+
+```{r}
+reactable(mtcars, filterable = TRUE, searchable = TRUE,
+            columns = list(
+    mpg = colDef(footer = "mean"),
+    cyl = colDef(footer = function(values) mean(values))
+  ))
+```
+
+## Inserting Citations and a Bibliography
+
+The European languages are members of the same family [@Hsiao2016]. 
+
+As Draz [-@Draz2016, pp. 22-47] shows: their separate existence is a myth.
+
+## Interactive Elements
+
+visNetwork
+
+```{r}
+library(visNetwork)
+library(igraph)
+erdos.renyi.game(22, 0.3) %>% 
+visIgraph()
+```
+
+htmlwidgets
+
+```{r}
+library(ggplot2)
+library(plotly)
+p <- ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+            geom_bar(position = "dodge")
+ggplotly(p)
+```
+
+
+## References
