@@ -1,13 +1,11 @@
 ---
-title: "W8 Examples"
+title: "W8 Examples 4"
 author: "Till Krenz"
 date: "12/4/2019"
 always_allow_html: yes
 bibliography: MyCollection.bib
 output:
   html_document: default
-  pdf_document: default
-  word_document: default
 ---
 
 ```{r setup, include=FALSE}

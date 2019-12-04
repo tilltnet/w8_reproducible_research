@@ -1,0 +1,64 @@
+---
+title: "W8 Examples 3"
+author: "Till Krenz"
+date: "12/4/2019"
+output:
+  pdf_document: default
+  html_document: default
+bibliography: MyCollection.bib
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	dev.args = list(type = "cairo")
+)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+```{r load data}
+data(mtcars)
+```
+
+
+## Awesome Tables
+
+(These only work properly in the HTML version!)
+
+formattable
+
+```{r}
+library(formattable)
+formattable(mtcars,
+            list(mpg = color_tile("yellow", "orange"),
+                 area(col = disp) ~ normalize_bar("pink", 0.2),
+                 area(col = hp) ~ normalize_bar("lightgreen", 0.2),
+                 vs = formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No")))))
+```
+
+reactable
+
+```{r}
+library(reactable)
+
+reactable(mtcars)
+```
+
+```{r}
+reactable(mtcars, filterable = TRUE, searchable = TRUE,
+            columns = list(
+    mpg = colDef(footer = "mean"),
+    cyl = colDef(footer = function(values) mean(values))
+  ))
+```
+

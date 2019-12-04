@@ -1,0 +1,60 @@
+---
+title: "W8 Examples 4"
+author: "Till Krenz"
+date: "12/4/2019"
+output:
+  pdf_document: default
+  html_document: default
+bibliography: MyCollection.bib
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	dev.args = list(type = "cairo")
+)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+```{r load data}
+data(mtcars)
+```
+
+## Inserting Citations and a Bibliography
+
+The European languages are members of the same family [@Hsiao2016]. 
+
+As Draz [-@Draz2016, pp. 22-47] shows: their separate existence is a myth.
+
+## Interactive Elements
+
+(These only work properly in the HTML version!)
+
+visNetwork
+
+```{r}
+library(visNetwork)
+library(igraph)
+erdos.renyi.game(22, 0.3) %>% 
+visIgraph()
+```
+
+htmlwidgets
+
+```{r}
+library(ggplot2)
+library(plotly)
+p <- ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+            geom_bar(position = "dodge")
+ggplotly(p)
+```
+
+## References
