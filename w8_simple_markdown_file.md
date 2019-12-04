@@ -3,12 +3,9 @@
 #### Abstract
 Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. Simple Text in simple paragraphs. 
 
-
-
 [Links to websites](www.google.de)
 
 ![Images](https://www.r-project.org/Rlogo.png)
-
 
 ## Introduction
 
