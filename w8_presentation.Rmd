@@ -69,8 +69,8 @@ This workshop focuses on bullet points 2-4.
   - RStudio comes with git support, so you don't have to learn the git command line!
   - todays Workshop Material is organised in a git repository that is [available on github](https://github.com/tilltnet/w8_reproducible_research)
 - Make the environment reproducible
-  - packrat (easy: can be activated in RStudio in the project options)
-  - system images (harder; docker, kubernetes, singularity or any virtual machine)
+  - provide the packages that where used in the project alongside the project data; packrat (easy: can be activated in RStudio in the project options)
+  - container or system images (harder; docker, kubernetes, singularity or any virtual machine)
 - A reproducible document format - RMarkdown
   - R + Markdown = RMarkdown
   - bibliography: [.bibtex and other formats supported](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
@@ -121,12 +121,46 @@ https://github.com/tilltnet/w8_reproducible_research/archive/master.zip
 - R-Notebook is a nice interactive version of RMarkdown
 - You might want to start out with a R-Notebook and convert it to RMarkdown File later on
 
-## Advanced options & inline R-Code
+## Advanced options
 
 - activate Cairo renderer (in order to have nice plots on Windows!)
 - using the cache to speed up rendering
 - setting global options for figure size and chunk evaluation
   - chunk options have priority over global options
+- add an automatically generated table of contents to the document
+- ...
+- There are three places where you can modify how the document gets rendered:
+
+    1. Output Options: Click the gear (⚙️️) icon on top of the editor and select "Output Options" for the  options.
+    2. Global Chunk Options: Click the gear (⚙️️) icon on top of the setup chunk in order to modify global chunk options.
+    3. Chunk options: Click the gear (⚙️️) icon on top ofany otherp chunk in order to modify chunk options.
+    
+### example setup chunk with global chunk options  
+
+```
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE,
+	cache = FALSE,
+	dev.args = list(type = "cairo") # Include this on windows machines in order to activate anti-alising for plots/ get better look plots
+)
+```
+    
+## Inline R-Code
+
+In addtion to code chunks, R-Code can be integrated inline, into the Markdown parts of the document:
+
+*Example:*
+
+This is some text and then we show the mean of the cylinders in the mtcars dataset like this `` `r
+mean(mtcars$cyl)` ``.
+
+*Example rendered:*
+
+This is some text and then we show the mean of the cylinders in the mtcars dataset like this `r mean(mtcars$cyl)`.
+
+
   
 ## (Some) Output formats
 

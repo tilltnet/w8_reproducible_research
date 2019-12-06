@@ -443,8 +443,8 @@ Till Krenz
 </ul></li>
 <li>Make the environment reproducible
 <ul>
-<li>packrat (easy: can be activated in RStudio in the project options)</li>
-<li>system images (harder; docker, kubernetes, singularity or any virtual machine)</li>
+<li>provide the packages that where used in the project alongside the project data; packrat (easy: can be activated in RStudio in the project options)</li>
+<li>container or system images (harder; docker, kubernetes, singularity or any virtual machine)</li>
 </ul></li>
 <li>A reproducible document format - RMarkdown
 <ul>
@@ -509,8 +509,8 @@ Till Krenz
 <li>You might want to start out with a R-Notebook and convert it to RMarkdown File later on</li>
 </ul>
 </div>
-<div id="advanced-options-inline-r-code" class="slide section level2">
-<h1>Advanced options &amp; inline R-Code</h1>
+<div id="advanced-options" class="slide section level2">
+<h1>Advanced options</h1>
 <ul>
 <li>activate Cairo renderer (in order to have nice plots on Windows!)</li>
 <li>using the cache to speed up rendering</li>
@@ -518,7 +518,31 @@ Till Krenz
 <ul>
 <li>chunk options have priority over global options</li>
 </ul></li>
+<li>add an automatically generated table of contents to the document</li>
+<li>…</li>
+<li><p>There are three places where you can modify how the document gets rendered:</p>
+<ol style="list-style-type: decimal">
+<li>Output Options: Click the gear (⚙️️) icon on top of the editor and select “Output Options” for the options.</li>
+<li>Global Chunk Options: Click the gear (⚙️️) icon on top of the setup chunk in order to modify global chunk options.</li>
+<li>Chunk options: Click the gear (⚙️️) icon on top ofany otherp chunk in order to modify chunk options.</li>
+</ol></li>
 </ul>
+<h3 id="example-setup-chunk-with-global-chunk-options">example setup chunk with global chunk options</h3>
+<pre><code>knitr::opts_chunk$set(
+    echo = TRUE,
+    message = FALSE,
+    warning = FALSE,
+    cache = FALSE,
+    dev.args = list(type = &quot;cairo&quot;) # Include this on windows machines in order to activate anti-alising for plots/ get better look plots
+)</code></pre>
+</div>
+<div id="inline-r-code" class="slide section level2">
+<h1>Inline R-Code</h1>
+<p>In addtion to code chunks, R-Code can be integrated inline, into the Markdown parts of the document:</p>
+<p><em>Example:</em></p>
+<p>This is some text and then we show the mean of the cylinders in the mtcars dataset like this <code>`r mean(mtcars$cyl)`</code>.</p>
+<p><em>Example rendered:</em></p>
+<p>This is some text and then we show the mean of the cylinders in the mtcars dataset like this 6.1875.</p>
 </div>
 <div id="some-output-formats" class="slide section level2">
 <h1>(Some) Output formats</h1>
