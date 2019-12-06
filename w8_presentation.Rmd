@@ -14,12 +14,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - RStudio hired a Artist in Residence
 - [allison_horst](https://twitter.com/allison_horst)
+
 ![tidy analysis cycle](allison_horst_tidy_analysis_cylce.jpg)
 
 - [RLadies](https://twitter.com/WeAreRLadies)
 - [RLadiesGNV](https://twitter.com/RLadiesGNV)
 
 ## #rstats on twitter
+
+- Example of a very short reproducible project.
 
 ![phone records](phone_records.png)
 
@@ -64,6 +67,7 @@ This workshop focuses on bullet points 2-4.
   - github.com or gitlab.com can be used to host git repositories online, for collaboration and sharing
   - [Happy Git and GitHub for the useR](https://happygitwithr.com/) is the ultimate ressource for learning git in R and RStudio
   - RStudio comes with git support, so you don't have to learn the git command line!
+  - todays Workshop Material is organised in a git repository that is [available on github](https://github.com/tilltnet/w8_reproducible_research)
 - Make the environment reproducible
   - packrat (easy: can be activated in RStudio in the project options)
   - system images (harder; docker, kubernetes, singularity or any virtual machine)
@@ -119,35 +123,46 @@ presentation, emails or documentation (This presentation is authored in Markdown
 ## (Some) Output formats
 
 - HTML
-- PDF (needs a Latex install on the system; tinytex::install_tinytex())
+- PDF (needs a Latex install on the system)
+      
+      install.packages('tinytex')
+      tinytex::install_tinytex()
+
 - docx
 - ioslides
 - slidy
 - Powerpoint
 
+- The following examples include items, that will not render properly in all target formats. Especially interactive elements and tables are usually only working right in HTML documents!
+
 ## Creating nice tables
 
+- see: w8_examples_1.Rmd
 - knitr::kable()
 - [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)
 
 ## Creating regression tables
 
+- see: w8_examples_2.Rmd
 - HTML: sjPlot::tab_model()
 - HTML and PDF: stargazer::stargazer()
 
 ## Creating awesome tables
 
-- colorfull and flexible: [formattable](https://renkun-ken.github.io/formattable/)
+- see: w8_examples_3.Rmd
+- colorful and flexible: [formattable](https://renkun-ken.github.io/formattable/)
 - interactive: [reacttable](https://glin.github.io/reactable/articles/examples.html)
 
 ## Including bibliographies
 
+- see: w8_examples_4.Rmd
 - adding YAML option
 - referencing in markdown text:
 
 
 ## Including interactive elements
 
+- see: w8_examples_4.Rmd
 - [visNetwork](https://datastorm-open.github.io/visNetwork/)
 - [htmlwidgets](https://www.htmlwidgets.org/)
 
@@ -173,7 +188,6 @@ presentation, emails or documentation (This presentation is authored in Markdown
 ```{r}
 library(help = "datasets")
 ```
-
 - display the first few cases of the dataset in a nice table
 - create a nice frequency table
 - create any kind of plot based on the dataset
