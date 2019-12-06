@@ -100,6 +100,10 @@ presentation, emails or documentation (This presentation is authored in Markdown
 - Repository URL: https://github.com/tilltnet/w8_reproducible_research.git
 - Choose local folder to create project folder in.
 
+### without git:
+- download and extraxct zip file with materials here:
+https://github.com/tilltnet/w8_reproducible_research/archive/master.zip
+
 ## A simple RMarkdown File
 
 - Create RMarkdown file in RStudio

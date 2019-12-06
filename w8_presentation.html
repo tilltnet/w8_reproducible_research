@@ -472,11 +472,20 @@ Till Krenz
 </div>
 <div id="lets-get-the-workshop-material-from-github.com" class="slide section level2">
 <h1>Let’s get the workshop material from github.com</h1>
+<h3 id="using-git">using git :</h3>
 <ul>
+<li>for this to work git needs to be installed on your system!
+<ul>
+<li><a href="https://happygitwithr.com/install-git.html">Install Git</a></li>
+</ul></li>
 <li>Open RStudio</li>
 <li>File -&gt; New Project -&gt; Version Control -&gt; Git</li>
 <li>Repository URL: <a href="https://github.com/tilltnet/w8_reproducible_research.git" class="uri">https://github.com/tilltnet/w8_reproducible_research.git</a></li>
 <li>Choose local folder to create project folder in.</li>
+</ul>
+<h3 id="without-git">without git:</h3>
+<ul>
+<li>download and extraxct zip file with materials here: <a href="https://github.com/tilltnet/w8_reproducible_research/archive/master.zip" class="uri">https://github.com/tilltnet/w8_reproducible_research/archive/master.zip</a></li>
 </ul>
 </div>
 <div id="a-simple-rmarkdown-file" class="slide section level2">
@@ -522,11 +531,13 @@ tinytex::install_tinytex()</code></pre></li>
 <li>ioslides</li>
 <li>slidy</li>
 <li><p>Powerpoint</p></li>
+<li><p>The following examples include items, that will not render properly in all target formats. Especially interactive elements and tables are usually only working right in HTML documents!</p></li>
 </ul>
 </div>
 <div id="creating-nice-tables" class="slide section level2">
 <h1>Creating nice tables</h1>
 <ul>
+<li>see: w8_examples_1.Rmd</li>
 <li>knitr::kable()</li>
 <li><a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a></li>
 </ul>
@@ -534,6 +545,7 @@ tinytex::install_tinytex()</code></pre></li>
 <div id="creating-regression-tables" class="slide section level2">
 <h1>Creating regression tables</h1>
 <ul>
+<li>see: w8_examples_2.Rmd</li>
 <li>HTML: sjPlot::tab_model()</li>
 <li>HTML and PDF: stargazer::stargazer()</li>
 </ul>
@@ -541,6 +553,7 @@ tinytex::install_tinytex()</code></pre></li>
 <div id="creating-awesome-tables" class="slide section level2">
 <h1>Creating awesome tables</h1>
 <ul>
+<li>see: w8_examples_3.Rmd</li>
 <li>colorful and flexible: <a href="https://renkun-ken.github.io/formattable/">formattable</a></li>
 <li>interactive: <a href="https://glin.github.io/reactable/articles/examples.html">reacttable</a></li>
 </ul>
@@ -548,6 +561,7 @@ tinytex::install_tinytex()</code></pre></li>
 <div id="including-bibliographies" class="slide section level2">
 <h1>Including bibliographies</h1>
 <ul>
+<li>see: w8_examples_4.Rmd</li>
 <li>adding YAML option</li>
 <li>referencing in markdown text:</li>
 </ul>
@@ -555,6 +569,7 @@ tinytex::install_tinytex()</code></pre></li>
 <div id="including-interactive-elements" class="slide section level2">
 <h1>Including interactive elements</h1>
 <ul>
+<li>see: w8_examples_4.Rmd</li>
 <li><a href="https://datastorm-open.github.io/visNetwork/">visNetwork</a></li>
 <li><a href="https://www.htmlwidgets.org/">htmlwidgets</a></li>
 </ul>
