@@ -505,8 +505,8 @@ Till Krenz
 <ul>
 <li>a lot of similarities, both are Markdown files, they are just rendered differently</li>
 <li>RMarkdown better for publication</li>
-<li>R-Notebook is a nice interactive version of RMarkdown</li>
-<li>You might want to start out with a R-Notebook and convert it to RMarkdown File later on</li>
+<li>R-Notebook is a more interactive version of RMarkdown</li>
+<li>You might want to start out with a R-Notebook and convert it to RMarkdown File later on.</li>
 </ul>
 </div>
 <div id="advanced-options" class="slide section level2">
@@ -549,14 +549,16 @@ Till Krenz
 <h1>(Some) Output formats</h1>
 <ul>
 <li>HTML</li>
-<li><p>PDF (needs a Latex install on the system)</p>
+<li>PDF (needs a Latex install on the system)</li>
+</ul>
 <pre><code>install.packages('tinytex')
-tinytex::install_tinytex()</code></pre></li>
+tinytex::install_tinytex()</code></pre>
+<ul>
 <li>docx</li>
 <li>ioslides</li>
 <li>slidy</li>
-<li><p>Powerpoint</p></li>
-<li><p>The following examples include items, that will not render properly in all target formats. Especially interactive elements and tables are usually only working right in HTML documents!</p></li>
+<li>Powerpoint</li>
+<li>The following examples include items, that will not render properly in all target formats. Especially interactive elements and tables are usually only working right in HTML documents!</li>
 </ul>
 </div>
 <div id="creating-nice-tables" class="slide section level2">
@@ -583,12 +585,25 @@ tinytex::install_tinytex()</code></pre></li>
 <li>interactive: <a href="https://glin.github.io/reactable/articles/examples.html">reacttable</a></li>
 </ul>
 </div>
-<div id="including-bibliographies" class="slide section level2">
-<h1>Including bibliographies</h1>
+<div id="references-and-bibliography" class="slide section level2">
+<h1>References and Bibliography</h1>
+<h3 id="preparations">Preparations</h3>
 <ul>
 <li>see: w8_examples_4.Rmd</li>
-<li>adding YAML option</li>
+<li>adding YAML option (bibliography: file_name.bib)</li>
+<li>take a look at the MyCollection.bib file. It specifies a key for each publication (e.i. Abolkasim2016), that is used to reference the publication in the Markdown text.</li>
+</ul>
+<h3 id="referencing">Referencing</h3>
+<ul>
 <li>referencing in markdown text:</li>
+<li>Reference a publication: <span class="citation">[@key]</span></li>
+<li>Without the author name: <span class="citation">[-@key]</span></li>
+<li>With page numbers: [<span class="citation">@key</span>, p. 22 - 34</li>
+<li>Several Publications: <span class="citation">[-@key, p. 22 - 34; also @another_key, ch. 1]</span></li>
+</ul>
+<h3 id="bibliography">Bibliography</h3>
+<ul>
+<li>make sure to include a “Reference” (or similar) header at the end of the RMarkdown file, the bibliography will be included automatically.</li>
 </ul>
 </div>
 <div id="including-interactive-elements" class="slide section level2">

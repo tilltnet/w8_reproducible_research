@@ -118,8 +118,8 @@ https://github.com/tilltnet/w8_reproducible_research/archive/master.zip
 
 - a lot of similarities, both are Markdown files, they are just rendered differently
 - RMarkdown better for publication
-- R-Notebook is a nice interactive version of RMarkdown
-- You might want to start out with a R-Notebook and convert it to RMarkdown File later on
+- R-Notebook is a more interactive version of RMarkdown
+- You might want to start out with a R-Notebook and convert it to RMarkdown File later on.
 
 ## Advanced options
 
@@ -167,15 +167,16 @@ This is some text and then we show the mean of the cylinders in the mtcars datas
 
 - HTML
 - PDF (needs a Latex install on the system)
-      
-      install.packages('tinytex')
-      tinytex::install_tinytex()
+
+```
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
 
 - docx
 - ioslides
 - slidy
 - Powerpoint
-
 - The following examples include items, that will not render properly in all target formats. Especially interactive elements and tables are usually only working right in HTML documents!
 
 ## Creating nice tables
@@ -196,12 +197,22 @@ This is some text and then we show the mean of the cylinders in the mtcars datas
 - colorful and flexible: [formattable](https://renkun-ken.github.io/formattable/)
 - interactive: [reacttable](https://glin.github.io/reactable/articles/examples.html)
 
-## Including bibliographies
+## References and Bibliography
 
+### Preparations
 - see: w8_examples_4.Rmd
-- adding YAML option
-- referencing in markdown text:
+- adding YAML option (bibliography: file_name.bib)
+- take a look at the MyCollection.bib file. It specifies a key for each publication (e.i. Abolkasim2016), that is used to reference the publication in the Markdown text.
 
+### Referencing
+- referencing in markdown text:
+- Reference a publication: [@key] 
+- Without the author name: [-@key]
+- With page numbers: [-@key, p. 22 - 34
+- Several Publications: [-@key, p. 22 - 34; also @another_key, ch. 1]
+
+### Bibliography
+- make sure to include a "Reference" (or similar) header at the end of the RMarkdown file, the bibliography will be included automatically.
 
 ## Including interactive elements
 
