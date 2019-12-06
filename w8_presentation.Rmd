@@ -143,7 +143,8 @@ knitr::opts_chunk$set(
 	message = FALSE,
 	warning = FALSE,
 	cache = FALSE,
-	dev.args = list(type = "cairo") # Include this on windows machines in order to activate anti-alising for plots/ get better look plots
+	dev.args = list(type = "cairo") # Include this on windows machines in order to activate 
+	                                # anti-alising for plots/ get better looking plots
 )
 ```
     
@@ -227,9 +228,11 @@ This is some text and then we show the mean of the cylinders in the mtcars datas
 
 - Create an RMarkdown File
 - load a dataset (other than mtcars)
-```{r}
+
+```
 library(help = "datasets")
 ```
+
 - display the first few cases of the dataset in a nice table
 - create a nice frequency table
 - create any kind of plot based on the dataset

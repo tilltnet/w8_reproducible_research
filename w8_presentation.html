@@ -533,7 +533,8 @@ Till Krenz
     message = FALSE,
     warning = FALSE,
     cache = FALSE,
-    dev.args = list(type = &quot;cairo&quot;) # Include this on windows machines in order to activate anti-alising for plots/ get better look plots
+    dev.args = list(type = &quot;cairo&quot;) # Include this on windows machines in order to activate 
+                                    # anti-alising for plots/ get better looking plots
 )</code></pre>
 </div>
 <div id="inline-r-code" class="slide section level2">
@@ -620,14 +621,17 @@ tinytex::install_tinytex()</code></pre></li>
 <h1>Exercise:</h1>
 <ul>
 <li>Create an RMarkdown File</li>
-<li><p>load a dataset (other than mtcars)</p></li>
+<li>load a dataset (other than mtcars)</li>
+</ul>
+<pre><code>library(help = &quot;datasets&quot;)</code></pre>
+<ul>
 <li>display the first few cases of the dataset in a nice table</li>
 <li>create a nice frequency table</li>
 <li>create any kind of plot based on the dataset</li>
 <li>create a two step regression model and display the results in a nice table</li>
 <li>add references to the document and create a bibliography</li>
 <li>add any further elements you are interested in</li>
-<li><p>render the whole document to two different formats (doc, pdf, html)</p></li>
+<li>render the whole document to two different formats (doc, pdf, html)</li>
 </ul>
 </div>
 
