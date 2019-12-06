@@ -46,6 +46,20 @@ formattable(mtcars,
     x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No")))))
 ```
 
+foramttable can be transformed into a paged output with as.datatable()
+
+```{r}
+formattable(mtcars,
+            list(mpg = color_tile("yellow", "orange"),
+                 area(col = disp) ~ normalize_bar("pink", 0.2),
+                 area(col = hp) ~ normalize_bar("lightgreen", 0.2),
+                 vs = formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No"))))) %>% 
+  as.datatable()
+```
+
+
 reactable
 
 ```{r}
