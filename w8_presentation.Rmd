@@ -91,6 +91,10 @@ presentation, emails or documentation (This presentation is authored in Markdown
 
 ## Let's get the workshop material from github.com
 
+### using git :
+
+- for this to work git needs to be installed on your system!
+  - [Install Git](https://happygitwithr.com/install-git.html)
 - Open RStudio
 - File -> New Project -> Version Control -> Git
 - Repository URL: https://github.com/tilltnet/w8_reproducible_research.git
